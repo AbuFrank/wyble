@@ -1,0 +1,39 @@
+/**
+ *  Fonts
+ *
+ * Author: Creative Blazer
+ * Project: Wyble
+ * Package: wyble-scss
+ *
+ * Font Colors, families, weights, etc.
+**/
+
+$color-h1: $color-primary;
+$color-h2: $color-primary;
+$color-h3: $color-quaternary;
+$color-h4: $color-primary;
+$color-h5: $color-primary;
+$color-h6: $color-primary;
+
+$color-paragraph: $color-black;
+$color-link: $color-secondary;
+
+$color-title-page: $color-primary;
+//$color-title-teaser: $color;
+//$color-title-block: $color;
+//$color-title-paragraph: $color;
+
+$color-font-light: $color-white;
+$color-font-dark: $color-black;
+$color-font-lead: $color-primary;
+$color-font-banner-teaser: $color-secondary;
+$color-font-label-contact: $color-tertiary;
+
+// Font Sizes
+$font-size-body: 20px;
+
+// Font Weight
+$font-weight-normal: 400;
+$font-weight-semibold: 500;
+$font-weight-bold: 700;
+$font-weight-heavy: 900;
