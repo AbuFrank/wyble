@@ -5,9 +5,12 @@
  * Project: Wyble
  * Package: wyble-scss
  *
- * Padding, Transitions, Box Shadow, Borders, etc.
+ * Grid, Padding, Transitions, Box Shadow, Borders, etc.
 **/
 
+//Grid
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
 
 // Padding
 $padding-box-small: 0.6rem;
