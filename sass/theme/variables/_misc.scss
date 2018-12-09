@@ -5,8 +5,14 @@
  * Project: Wyble
  * Package: wyble-scss
  *
- * Transitions, Box Shadow, Borders, etc.
+ * Padding, Transitions, Box Shadow, Borders, etc.
 **/
+
+
+// Padding
+$padding-box-small: 0.6rem;
+$padding-box-medium: 1rem;
+$padding-box-large: 1.2rem;
 
 // Transition
 $transition-primary: .25s ease-in-out;

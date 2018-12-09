@@ -1,0 +1,6 @@
+* {
+  &:focus {
+    box-shadow: $box-shadow-primary;
+    outline-color: $color-primary;
+  }
+}
