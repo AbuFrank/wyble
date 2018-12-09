@@ -20,23 +20,59 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	<div class="<?php echo esc_attr( $container ); ?>">
 
-		<div class="row">
+        <footer class="site-footer" id="colophon">
 
-			<div class="col-md-12">
+            <div class="contact">
+                <div class="contact-inner">
+                <?php if(get_field('contact_us_block')) : ?>
+                    <?php //TODO: Display Contact Us Block ?>
+                <?php else: ?>
+                    <h3>Contact Us</h3>
 
-				<footer class="site-footer" id="colophon">
+                    <div class="exerpt">
+                        Etiam rutrum. Aliquam blandit dui a libero. Prasesent tortor tortor, bibendum vehicula, accusan sed,
+                    </div>
+                    <div class="phone">
+                        <span><a href="tel:+18005551234">443-555-1234</a></span>
+                    </div>
+                    <div class="address">
+                        <div class="address1">219 High Street</div>
+<!--                                <div class="address2">219 High Street</div>-->
+                        <div class="city-state">Chestertown, MD</div>
+                        <div class="zip">21620</div>
+                    </div>
+                    <div class="social">
+                        <div class="social-twitter">
+                            <a href="https://twitter.com/">Follow Us on Twitter</a>
+                        </div>
+                        <div class="social-facebook">
+                            <a href="https://facebook.com/">Like Us on Facebook</a>
+                        </div>
+                        <div class="social-instagram">
+                            <a href="https://instagram/">Follow Us on Instagram</a>
+                        </div>
+                    </div>
+                <?php endif; ?>
+                </div>
+            </div><!-- .contact -->
 
-					<div class="site-info">
+            <div class="map">
+                <?php if(get_field('footer_map_block')) : ?>
+                    <?php //TODO: Display Footer Map Block ?>
+                <?php else: ?>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4400181.903780384!2d-73.48996814227607!3d42.6280359524839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89dd1c78c8ad35f9%3A0x78e3336a8c0e778d!2sThe+Den+of+Marbletown!5e0!3m2!1sen!2sus!4v1544374582511" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <?php endif; ?>
+            </div>
 
-						<?php understrap_site_info(); ?>
+            <div class="feed">
+                <?php if(get_field('footer_feed_block')) : ?>
+                    <?php //TODO: Display Footer Feed Block ?>
+                <?php else: ?>
+                    I don't know what this will end up being. Maybe an iFrame? Will style when needed.
+                <?php endif; ?>
+            </div>
 
-					</div><!-- .site-info -->
-
-				</footer><!-- #colophon -->
-
-			</div><!--col end -->
-
-		</div><!-- row end -->
+        </footer><!-- #colophon -->
 
 	</div><!-- container end -->
 
