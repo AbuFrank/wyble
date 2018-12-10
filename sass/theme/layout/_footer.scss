@@ -45,6 +45,28 @@
       color: $color-grey-dark;
       padding: $padding-box-medium;
     }
+
+    .social-icons {
+      margin: $padding-box-small 0;
+    }
+
+    .address {
+      margin: $padding-box-small 0;
+    }
+
+    .phone {
+      background-color: map-get($icons, $color-gray-light);
+      margin: $padding-box-small 0 $padding-box-small 0;
+
+      &:before {
+        @include font-smoothing();
+
+        content: $fa-var-envelope-o;
+        font: 1em/1.75 "FontAwesome";
+      }
+      @include link-colors($color-quinary, $color-quinary, $color-primary, $color-black);
+
+    }
   }
   .map {
 

@@ -42,15 +42,17 @@ $container = get_theme_mod( 'understrap_container_type' );
                         <div class="zip">21620</div>
                     </div>
                     <div class="social">
-                        <div class="social-twitter">
-                            <a href="https://twitter.com/">Follow Us on Twitter</a>
-                        </div>
-                        <div class="social-facebook">
-                            <a href="https://facebook.com/">Like Us on Facebook</a>
-                        </div>
-                        <div class="social-instagram">
-                            <a href="https://instagram/">Follow Us on Instagram</a>
-                        </div>
+                        <ul class="social-icons">
+                            <li class="icon social-twitter">
+                                <a href="https://twitter.com/"><span>Follow Us on Twitter</span></a>
+                            </li>
+                            <li class="icon social-facebook">
+                                <a href="https://facebook.com/"><span>Like Us on Facebook</span></a>
+                            </li>
+                            <li class="icon social-instagram">
+                                <a href="https://instagram/"><span>Follow Us on Instagram</span></a>
+                            </li>
+                        </ul>
                     </div>
                 <?php endif; ?>
                 </div>

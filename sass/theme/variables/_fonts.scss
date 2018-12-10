@@ -37,3 +37,17 @@ $font-weight-normal: 400;
 $font-weight-semibold: 500;
 $font-weight-bold: 700;
 $font-weight-heavy: 900;
+
+
+// Font Awesome Icons
+$icons: (
+        dribbble:  (char: "\f17d", color: #ea4c89),
+        envelope:   (char: "\f17d", color: $color-gray-light),
+        facebook:  (char: "\f09a", color: $color-grey-light),
+        github:    (char: "\f09b", color: #231f20),
+        google:    (char: "\f0d5", color: #dd4b39),
+        instagram: (char: "\f16d", color: $color-grey-light),
+        linkedin:  (char: "\f0e1", color: #0977b5),
+        rss:       (char: "\f09e", color: #ff6600),
+        twitter:   (char: "\f099", color: $color-grey-light),
+);
