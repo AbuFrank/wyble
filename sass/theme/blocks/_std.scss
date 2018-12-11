@@ -1,0 +1,39 @@
+/**
+ *  Standard Blocks
+ *
+ * Author: Creative Blazer
+ * Project: Wyble
+ * Package: wyble-scss
+ *
+ * Blocks (or sections) are separated out here. Because the site is relatively simple, these are all in one file. This
+ * should probably be split out into a block-global stub file and then invidivual stubs for each block (e.g. carousel,
+ * carousel-std, guides, etc).
+**/
+
+.block {
+  margin: 0;
+  padding: $padding-box-medium;
+}
+
+.property-types {
+  background: violet;
+}
+
+.cta-parallax {
+
+}
+
+.cta-std {
+
+}
+
+.guides {
+
+}
+
+.carousel-search {
+
+}
+
+
+
