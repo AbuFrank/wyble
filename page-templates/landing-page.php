@@ -30,17 +30,18 @@ $container = get_theme_mod( 'understrap_container_type' );
                         <?php get_template_part( 'loop-templates/content', 'page' ); ?>
 
                         <?php
-                            $blocks = array(
-                                'property-types',
-                                'carousel-search',
-                                'cta-std',
-                                'cta-parallax',
-                                'guides',
-                            );
+                        if( have_rows('wyble-blocks') ):
 
-                            foreach($blocks as $block) {
-                                get_template_part('block-templates/block', $block);
-                            }
+                            // loop through the rows of data
+                            while ( have_rows('wyble-blocks') ) : the_row();
+
+                                // Get block template based on block asked for. Make sure templates are created first
+                                get_template_part( 'block-templates/block', get_row_layout() );
+
+                            endwhile;
+                            else: echo "Nope";
+
+                        endif;
                         ?>
 
                         <?php
