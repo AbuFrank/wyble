@@ -40,23 +40,23 @@ endif;
 <?php if('std' == $cta_class) : ?>
     <article <?php post_class($article_classes); ?>>
         <div class="container">
-            <div class="row">
-                <div class="entry-content">
+            <div class="cta-content">
+                <?php if($copy): ?>
                     <div class="cta-copy">
                         <?php echo $copy; ?>
                     </div><!-- .cta-copy -->
+                <?php endif; ?>
+                <?php if ($image) : ?>
                     <div class="cta-image">
-                        <?php
-                        if (!empty($image)) :
-                            echo wp_get_attachment_image( $image['id'], 'large' );
-                        endif;
-                        ?>
+                        <?php echo wp_get_attachment_image( $image['id'], 'large' ); ?>
                     </div><!-- .cta-image -->
+                <?php endif; ?>
+                <?php if($button_location && $button_copy): ?>
                     <div class="cta-button">
                         <a class="btn btn-primary" role="button" href="<?php the_permalink($button_location->ID); ?>"><?php echo $button_copy; ?></a>
                     </div><!-- .cta-button -->
-                </div><!-- .entry-content -->
-            </div><!-- .row -->
+                <?php endif; ?>
+            </div><!-- .cta-content -->
         </div><!-- .container -->
     </article>
 <?php elseif('parallax' == $cta_class): ?>

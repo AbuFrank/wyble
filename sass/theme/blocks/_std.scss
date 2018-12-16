@@ -99,22 +99,43 @@
 }
 
 .cta-std {
-  background: yellow;
+  padding: (2 * $padding-box-large) $padding-box-medium;
   text-align: center;
+
+  .cta-content {
+    @include make-row();
+
+    text-align: center;
+  }
 
   .cta-button {
     padding: $padding-box-medium;
     width: 100%;
-  }
 
-  @include media-breakpoint-up(lg) {
-    .cta-copy,
-    .cta-image {
+    @include media-breakpoint-up(lg) {
+      margin-top: $padding-box-large;
+    }
+  }
+  .cta-copy,
+  .cta-image {
+    @include make-col-ready();
+    @include make-col(12);
+
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
       @include make-col-ready();
       @include make-col(6);
-    }
 
-    .cta-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+    }
+  }
+
+  .cta-copy {
+    @include media-breakpoint-up(lg) {
       text-align: left;
     }
   }
