@@ -37,14 +37,15 @@ $color-secondary: $color-my-sin;
 $color-tertiary: $color-yellow-orange;
 $color-quaternary: $color-grey-dark;
 $color-quinary: $color-st-tropaz;
-//$color-senary: #000;
+$color-senary: $color-blue-stone;
+$color-septenary: $color-pumpkin-skin;
 
 // Color Patterns
 $color-order: (
         $color-primary,
-        $color-secondary,
-        $color-tertiary,
-        $color-quaternary,
+        $color-senary,
+        $color-quinary,
+        $color-septenary,
 );
 
 

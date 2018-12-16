@@ -20,8 +20,8 @@ $article_classes = 'block guides';
 ?>
 
 <article <?php post_class($article_classes); ?>>
-    <div class="entry-content">
-        <div class="container">
+    <div class="container">
+        <div class="helpful-guide-content">
             <?php if($title): ?>
                 <div class="title guide-title">
                     <h3><?php echo $title; ?></h3>
@@ -34,19 +34,25 @@ $article_classes = 'block guides';
                 </div><!-- /.guide-title -->
             <?php endif; ?>
 
-            <div class="guide-groups">
-                <?php foreach ($labels as $count => $label) : ?>
-                    <div class="guide-group group-<?php echo $count; ?>" style="<?php echo ($count == 0 ? $bg_image_css : ''); ?>">
-                        <div class="guide-group-inner">
-                            <div class="title">
-                                <a href="<?php echo $label['destination']; ?>"><?php echo $label['label']; ?></a>
+            <?php if(is_array($labels)) : ?>
+                <div class="guide-groups">
+                    <?php foreach ($labels as $count => $label) : ?>
+                        <?php if(1 == $count): ?>
+                            <div class="guide-group-segment">
+                            <div class="guide-group-segment-inner">
+                        <?php endif; ?>
+                        <div class="guide-group group-<?php echo $count; ?>" style="<?php echo ($count == 0 ? $bg_image_css : ''); ?>">
+                            <div class="guide-group-inner">
+                                <a href="<?php echo $label['destination']; ?>" class="title"><?php echo $label['label']; ?></a>
                             </div>
                         </div>
-                    </div>
-                <?php
-                endforeach;
-                ?>
-            </div>
-        </div><!-- /.container -->
-    </div><!-- .entry-content -->
+                        <?php if(count($labels) == $count): ?>
+                                </div><!-- .guide-group-segment-inner -->
+                            </div><!-- .guide-group-segment -->
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div><!-- .guide-groups -->
+            <?php endif; ?>
+        </div><!-- .helpful-guide-content -->
+    </div><!-- .container -->
 </article><!-- .block-property-types-## -->
