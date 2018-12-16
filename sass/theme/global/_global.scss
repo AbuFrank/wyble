@@ -69,3 +69,17 @@ $icon-size: 12px;
     }
   }
 }
+
+h1 {
+  color: $color-primary;
+}
+
+h2 {
+  color: $color-secondary;
+}
+
+h3 {
+  color: $color-primary;
+  font-size: 1.75rem;
+  font-weight: $font-weight-bold;
+}
