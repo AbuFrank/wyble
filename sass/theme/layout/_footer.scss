@@ -5,7 +5,7 @@
  * Project: Wyble
  * Package: wyble-scss
  *
- * Foooter and subfooter
+ * Footer and subfooter
 **/
 
 #wrapper-footer {
@@ -13,25 +13,33 @@
 
   background: $color-primary;
   color: $color-white;
-  padding: $padding-box-large 0;
+  padding: $padding-box-medium 0;
+  text-align: center;
 }
 
 .site-footer {
   @include make-row();
 
   & > div {
-    margin-bottom: $padding-box-large;
-    width: 100%;
+    @include make-col-ready();
+    @include make-col(12);
+
+    margin-bottom: $padding-box-medium;
 
     &:last-of-type {
       margin-bottom: 0;
     }
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
       @include make-col-ready();
       @include make-col(4);
 
-      margin-bottom: 0;
+      margin: $padding-box-medium 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(4);
+      margin: (2 * $padding-box-medium) 0;
     }
 
     @include media-breakpoint-up(xl) {
@@ -82,6 +90,7 @@
 
     iframe {
       height: auto;
+      max-width: 100%;
       width: 100%;
     }
 
@@ -89,7 +98,6 @@
 
       iframe {
         height: 100%;
-        width: 100%;
       }
     }
   }
@@ -101,12 +109,20 @@
 #wrapper-subfooter {
   background: $color-secondary;
   color: $color-white;
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: $font-weight-bold;
   padding: $padding-box-small;
   text-align: center;
 
   a {
     font-weight: $font-weight-normal;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.2rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.45rem;
   }
 }

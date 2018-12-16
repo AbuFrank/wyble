@@ -21,7 +21,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<div class="<?php echo esc_attr( $container ); ?>">
 
         <footer class="site-footer" id="colophon">
-
             <div class="contact">
                 <div class="contact-inner">
                 <?php if(get_field('contact_us_block')) : ?>
