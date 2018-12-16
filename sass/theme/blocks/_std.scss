@@ -43,13 +43,11 @@
 }
 
 .cta-parallax {
-  background: url(images/bg.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0;
   text-align: center;
 
   .container-overlay {
@@ -59,7 +57,30 @@
 
   .container {
     color: $color-white;
-    padding: (3 * $padding-box-large) $padding-box-medium;
+    padding: (2 * $padding-box-large) $padding-box-medium;
+  }
+  .cta-content {
+
+    .cta-copy,
+    .cta-quotes {
+      @include make-row();
+      margin: $padding-box-large 0;
+
+      [class^="quote-"] {
+        @include make-col(12);
+
+        margin-bottom: $padding-box-large;
+
+        &:last-of-type {
+          margin-bottom: $padding-box-small;
+        }
+        @include media-breakpoint-up(md) {
+          @include make-col(6);
+          padding: 0 $padding-box-large;
+          margin-bottom: $padding-box-small;
+        }
+      }
+    }
 
     h3 {
       font-size: 1.75rem;
@@ -70,7 +91,7 @@
     }
 
     h4 {
-      font-size: 1rem;
+      font-size: 1.2em;
       opacity: 0.9;
     }
   }

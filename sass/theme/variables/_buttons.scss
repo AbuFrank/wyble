@@ -15,3 +15,12 @@ $color-button-secondary-light: $color-primary;
 // Font Colors
 $color-button-font-light: $color-white;
 $color-button-font-dark: $color-grey-dark;
+
+
+.btn.btn-secondary {
+
+  &:hover,
+  &:focus{
+    color: $color-white;
+  }
+}
