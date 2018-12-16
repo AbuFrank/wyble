@@ -39,6 +39,15 @@ $color-quaternary: $color-grey-dark;
 $color-quinary: $color-st-tropaz;
 //$color-senary: #000;
 
+// Color Patterns
+$color-order: (
+        $color-primary,
+        $color-secondary,
+        $color-tertiary,
+        $color-quaternary,
+);
+
 
 // Bootstrap Overrides
 $primary: $color-primary;
+$secondary: $color-secondary;
