@@ -13,6 +13,8 @@
  *
  * 1. Focus
  * 2. Social Icons
+ * 3. Headers
+ * 4. Anchors
  */
 
 // 1. Focus
@@ -70,6 +72,7 @@ $icon-size: 12px;
   }
 }
 
+// 3. Headers
 h1 {
   color: $color-primary;
 }
@@ -82,4 +85,13 @@ h3 {
   color: $color-primary;
   font-size: 1.75rem;
   font-weight: $font-weight-bold;
+}
+
+// 4. Anchors
+a {
+  
+  &:hover, 
+  &:focus {
+    text-decoration: none;
+  }
 }
