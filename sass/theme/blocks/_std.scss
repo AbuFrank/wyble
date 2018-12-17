@@ -1,0 +1,294 @@
+/**
+ *  Standard Blocks
+ *
+ * Author: Creative Blazer
+ * Project: Wyble
+ * Package: wyble-scss
+ *
+ * Blocks (or sections) are separated out here. Because the site is relatively simple, these are all in one file. This
+ * should probably be split out into a block-global stub file and then invidivual stubs for each block (e.g. carousel,
+ * carousel-std, guides, etc).
+**/
+
+.page-template-landing-page {
+  .wrapper {
+    max-width: 100%;
+    min-width: 100%;
+    padding: 0;
+
+    .row {
+      max-width: 100%;
+      min-width: 100%;
+    }
+  }
+}
+
+#primary-landing {
+  width: 100%;
+}
+
+.block {
+  margin: 0;
+  padding: $padding-box-medium;
+  text-align: center;
+
+  .entry-content {
+    @include make-row();
+  }
+}
+
+.cta-parallax {
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+  text-align: center;
+
+  .container-overlay {
+    height: 100%;
+    width: 100%;
+  }
+
+  .container {
+    color: $color-white;
+    padding: (2 * $padding-box-large) $padding-box-medium;
+  }
+  .cta-content {
+
+    .cta-copy,
+    .cta-quotes {
+      @include make-row();
+      margin: $padding-box-large 0;
+
+      [class^="quote-"] {
+        @include make-col(12);
+
+        margin-bottom: $padding-box-large;
+
+        &:last-of-type {
+          margin-bottom: $padding-box-small;
+        }
+        @include media-breakpoint-up(md) {
+          @include make-col(6);
+          padding: 0 $padding-box-large;
+          margin-bottom: $padding-box-small;
+        }
+      }
+    }
+
+    h3 {
+      color: $color-white;
+      font-size: 2rem;
+
+      span {
+        color: $color-secondary;
+      }
+    }
+
+    h4 {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+  }
+
+}
+
+.cta-std {
+  padding: (2 * $padding-box-large) $padding-box-medium;
+  text-align: center;
+
+  .cta-content {
+    @include make-row();
+
+    text-align: center;
+  }
+
+  .cta-button {
+    padding: $padding-box-medium;
+    width: 100%;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: $padding-box-large;
+    }
+  }
+  .cta-copy,
+  .cta-image {
+    @include make-col-ready();
+    @include make-col(12);
+
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      @include make-col-ready();
+      @include make-col(6);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+    }
+  }
+
+  .cta-copy {
+    @include media-breakpoint-up(lg) {
+      text-align: left;
+    }
+  }
+}
+
+.property-types {
+
+  .property-type-inner {
+    padding: (2 * $padding-box-large) 0;
+  }
+
+  .property-type-elements {
+    @include make-row();
+  }
+
+  .property-type-element-container {
+    margin-bottom: $padding-box-medium;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(md) {
+      @include make-col(4);
+    }
+  }
+
+  .property-type-header {
+    color: $color-primary;
+    margin-bottom: $padding-box-large;
+  }
+
+  .property-type-element {
+    align-items: stretch;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      height: 220px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      height: 314px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin: 0 auto;
+      width: 90%;
+    }
+
+    .title {
+      align-items: center;
+      color: $color-white;
+      display: flex;
+      font-size: 1.4rem;
+      height: 100%;
+      justify-content: center;
+      text-shadow:  1px 2px 6px #333;
+      transition: $transition-primary;
+
+      &:hover,
+      &:focus {
+        background-color: rgba($color-black, 0.2);
+        transition: $transition-primary;
+      }
+    }
+  }
+}
+
+.guides {
+
+  .guide-groups {
+    @include make-row();
+
+    margin-top: $padding-box-large;
+  }
+
+  .guide-group {
+    @include make-col-ready();
+    @include make-col(12);
+    @include link-colors($color-white, $color-white, $color-tertiary, $color-quinary);
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 8rem;
+    padding: $padding-box-medium;
+
+
+
+    .guide-group-inner {
+      border: 1px solid rgba($color-tertiary, 0.5);
+      display: flex;
+      flex-direction: column;
+      font-size: 1.4rem;
+      height: 100%;
+      justify-content: center;
+      padding: $padding-box-medium;
+    }
+
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    // Color list is set in variables/_colors.scss
+    // This is potentially overkill, but we now have a consistent order
+    @each $current-color in $color-order {
+      $i: index($color-order, $current-color);
+      &.group-#{$i} {
+        background: $current-color;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+
+    .guide-group-segment {
+      @include make-col(6);
+      display: block;
+
+      .guide-group-segment-inner {
+        @include make-row();
+
+        .guide-group {
+          @include make-col(6);
+
+          min-height: 16rem;
+        }
+      }
+    }
+
+    .guide-group {
+      &.group-0 {
+        @include make-col(6);
+      }
+
+      .title {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.4rem;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.carousel-search {
+
+}
+
+
+
