@@ -15,6 +15,7 @@
  * 2. Social Icons
  * 3. Headers
  * 4. Anchors
+ * 5. Images
  */
 
 // 1. Focus
@@ -94,4 +95,10 @@ a {
   &:focus {
     text-decoration: none;
   }
+}
+
+// 5. Images
+img {
+  max-width: 100%;
+  height: auto;
 }
