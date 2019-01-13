@@ -26,6 +26,11 @@ $container = 'landing-page';
                     <?php
                     while ( have_posts() ) : the_post();
 
+                        // Jumbo header/slider
+                        if( have_rows( 'images' ) ):
+                            get_template_part( 'block-templates/block', 'carousel_search' );
+                        endif;
+
                         if( have_rows('wyble-blocks') ):
 
                             // loop through the rows of data

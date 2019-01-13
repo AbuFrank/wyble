@@ -36,4 +36,27 @@ $color-button-font-dark: $color-grey-dark;
       color: $color-white;
     }
   }
+
+  &.btn-submit {
+    background: $color-secondary;
+    color: $color-grey-dark;
+    padding: .4rem .6rem .3rem .6rem;
+
+    &:hover,
+    &:focus{
+      color: $color-white;
+    }
+
+    span {
+
+      &:before {
+        color: $color-grey-dark;
+        content: "\f002";
+        display: inline-block;
+        font: 1em/1.75 "FontAwesome";
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
 }

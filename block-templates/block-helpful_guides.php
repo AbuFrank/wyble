@@ -14,7 +14,7 @@ $title = get_sub_field('title');
 $copy = get_sub_field('copy');
 $labels = get_sub_field('labels');
 $image = get_sub_field('image');
-$bg_image_css = "background-image: url('" . $image['url'] . "');'";
+$bg_image_css = "background-image: url('" . $image['url'] . "');";
 //$bg_image_css = "";
 $article_classes = 'block guides';
 ?>

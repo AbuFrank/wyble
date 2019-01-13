@@ -39,3 +39,15 @@ function add_child_theme_textdomain() {
     load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
+
+/**
+ * Convert hex and float to rgba
+ *
+ * @param $overlay_color
+ * @param $overlay_opacity
+ * @return string
+ */
+function hexToRgba($overlay_color, $overlay_opacity) {
+    list($r, $g, $b) = sscanf($overlay_color, "#%02x%02x%02x");
+    return "$r, $g, $b, $overlay_opacity";
+}
