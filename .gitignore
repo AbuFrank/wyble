@@ -1,17 +1,41 @@
-.sass-cache
-
-bower_components
-
-node_modules
-
-understrap.zip
-
+## Compiled Assets
+css/
+js/*min.js
 dist
-
 dist-product
 
-npm-debug.log
-
+## Package Managers
+bower_components
+node_modules
 /vendor/
 
-css/*
+## Cache and Logs
+.sass-cache
+npm-debug.log
+*.log
+
+## OS Specifics
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.svn
+.cvs
+*.bak
+*.swp
+
+## IDE/Text Editor
+.idea/
+
+## Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip

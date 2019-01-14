@@ -1,0 +1,37 @@
+/**
+ *  Miscellaneous
+ *
+ * Author: Creative Blazer
+ * Project: Wyble
+ * Package: wyble-scss
+ *
+ * Grid, Padding, Transitions, Box Shadow, Borders, etc.
+**/
+
+//Grid
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
+
+// Padding
+$padding-box-small: 0.6rem;
+$padding-box-medium: 1rem;
+$padding-box-large: 2.4rem;
+
+// Transition
+$transition-primary: .25s ease-in-out;
+
+// Box Shadow
+$box-shadow-primary: 0 0 30px 2px rgba($color-grey-dark, .1);
+$box-shadow-hover: 0 0 20px 2px rgba($color-grey-dark, .2);
+$box-shadow-menu: 1px 1px 5px 0 rgba($color-grey-dark, .2);
+$box-shadow-footer-icon: 0 0 5px 7px rgba($color-grey-dark, .1);
+$box-shadow-footer-icon-hover: 0 0 5px 12px rgba($color-grey-dark, .1);
+$box-shadow-scrollbar: inset 0 0 6px rgba($color-grey-dark, .3);
+$box-shadow-sticky-menu: 0 0 5px 7px rgba($color-grey-dark, .1);
+
+// Borders
+// I'm setting these to EXACT color values because they _may_ be independent of the rest of the color scheme.
+$color-border-general: $color-yellow-orange;
+$color-border-accent: $color-yellow-orange;
+$color-border-subdued: $color-my-sin;
+$color-border-light: $color-white;

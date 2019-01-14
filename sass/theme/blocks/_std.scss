@@ -1,0 +1,521 @@
+/**
+ *  Standard Blocks
+ *
+ * Author: Creative Blazer
+ * Project: Wyble
+ * Package: wyble-scss
+ *
+ * Blocks (or sections) are separated out here. Because the site is relatively simple, these are all in one file. This
+ * should probably be split out into a block-global stub file and then invidivual stubs for each block (e.g. carousel,
+ * carousel-std, guides, etc).
+**/
+
+.page-template-landing-page {
+  .wrapper {
+    max-width: 100%;
+    min-width: 100%;
+    padding: 0;
+
+    .row {
+      max-width: 100%;
+      min-width: 100%;
+    }
+  }
+}
+
+#primary-landing {
+  width: 100%;
+}
+
+.block {
+  margin: 0;
+  padding: $padding-box-medium;
+  text-align: center;
+
+  .entry-content {
+    @include make-row();
+  }
+}
+
+.cta-parallax {
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+  text-align: center;
+
+  .container-overlay {
+    height: 100%;
+    width: 100%;
+  }
+
+  .container {
+    color: $color-white;
+    padding: (2 * $padding-box-large) $padding-box-medium;
+  }
+
+  .cta-content {
+
+    .cta-copy,
+    .cta-quotes {
+      @include make-row();
+      margin: $padding-box-large 0;
+
+      [class^="quote-"] {
+        @include make-col(12);
+
+        margin-bottom: $padding-box-large;
+
+        &:last-of-type {
+          margin-bottom: $padding-box-small;
+        }
+
+        @include media-breakpoint-up(md) {
+          @include make-col(6);
+          padding: 0 $padding-box-large;
+          margin-bottom: $padding-box-small;
+        }
+      }
+    }
+
+    h3 {
+      color: $color-white;
+      font-size: 2rem;
+
+      span {
+        color: $color-secondary;
+      }
+    }
+
+    h4 {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+  }
+
+}
+
+.cta-std {
+  padding: (2 * $padding-box-large) $padding-box-medium;
+  text-align: center;
+
+  .cta-content {
+    @include make-row();
+
+    text-align: center;
+  }
+
+  .cta-button {
+    padding: $padding-box-medium;
+    width: 100%;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: $padding-box-large;
+    }
+  }
+
+  .cta-copy,
+  .cta-image {
+    @include make-col-ready();
+    @include make-col(12);
+
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      @include make-col-ready();
+      @include make-col(6);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+    }
+  }
+
+  .cta-copy {
+    @include media-breakpoint-up(lg) {
+      text-align: left;
+    }
+  }
+}
+
+.property-types {
+
+  .property-type-inner {
+    padding: $padding-box-large 0;
+
+    @include media-breakpoint-up(lg) {
+      padding: (2 * $padding-box-large) 0;
+    }
+  }
+
+  .property-type-elements {
+    @include make-row();
+  }
+
+  .property-type-element-container {
+    margin-bottom: $padding-box-medium;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(md) {
+      @include make-col(4);
+    }
+  }
+
+  .property-type-header {
+    color: $color-primary;
+    margin-bottom: $padding-box-large;
+  }
+
+  .property-type-element {
+    align-items: stretch;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      height: 220px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      height: 314px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin: 0 auto;
+      width: 90%;
+    }
+
+    .title {
+      align-items: center;
+      background: rgba($color-grey-dark, 0.2);
+      color: $color-white;
+      display: flex;
+      font-size: 1.4rem;
+      height: 100%;
+      justify-content: center;
+      text-shadow: 1px 2px 6px #333;
+      transition: $transition-primary;
+
+      &:hover,
+      &:focus {
+        background-color: rgba($color-black, 0.2);
+        transition: $transition-primary;
+      }
+    }
+  }
+}
+
+.guides {
+
+  .guide-groups {
+    @include make-row();
+
+    margin-top: $padding-box-large;
+
+  }
+
+  .guide-group-segment {
+    width: 100%;
+  }
+
+  .guide-group {
+    @include make-col-ready();
+    @include make-col(12);
+    @include link-colors($color-white, $color-white, $color-tertiary, $color-quinary);
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: $padding-box-medium;
+
+
+    .guide-group-inner {
+      border: 1px solid rgba($color-tertiary, 0.5);
+      display: flex;
+      flex-direction: column;
+      font-size: 1.4rem;
+      height: 100%;
+      justify-content: center;
+      padding: $padding-box-medium;
+    }
+
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    // Color list is set in variables/_colors.scss
+    // This is potentially overkill, but we now have a consistent order
+    @each $current-color in $color-order {
+      $i: index($color-order, $current-color);
+      &.group-#{$i} {
+        background: $current-color;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+
+    .guide-group-segment {
+      @include make-col(6);
+      display: block;
+      width: 100%;
+
+      .guide-group-segment-inner {
+        @include make-row();
+
+        .guide-group {
+          @include make-col(6);
+
+          min-height: 16rem;
+        }
+      }
+    }
+
+    .guide-group {
+      &.group-0 {
+        @include make-col(6);
+      }
+
+      .title {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.4rem;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.carousel-search {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  overflow: hidden;
+
+  @include media-breakpoint-up(md) {
+    position: relative;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .owl-item {
+    display: inline-block;
+
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+
+    > div {
+
+      @include media-breakpoint-up(md) {
+        position: relative;
+        overflow: hidden;
+        height: 440px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        height: 530px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        height: 660px;
+      }
+
+      > img {
+        @include media-breakpoint-up(md) {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+      }
+    }
+  }
+
+  .owl-stage {
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: -7px;
+    }
+  }
+
+  .owl-nav {
+    &.disabled {
+      display: none;
+    }
+  }
+
+  .owl-thumbs {
+
+    .owl-thumb-item {
+      background-color: $black;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      box-shadow: 0 0 8px $color-gray-dark;
+      display: inline-block;
+      margin: 4% 2%;
+      max-height: 20%;
+      max-width: 19%;
+      transition: $transition-primary;
+
+      @include media-breakpoint-up(md) {
+        box-shadow: 0 0 6px $color-gray-light;
+        display: block;
+        max-width: 12%;
+        max-height: 12%;
+      }
+
+      @include media-breakpoint-up(lg) {
+        max-width: 15%;
+        max-height: 15%;
+      }
+
+      @include media-breakpoint-up(xl) {
+        max-width: 18.5%;
+        max-height: 18.5%;
+      }
+
+      .owl-thumb-inner {
+        border: 1px solid rgba($color-tertiary, 0.75);
+      }
+
+      img {
+        height: 95%;
+        width: 95%;
+        visibility: hidden;
+      }
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.85;
+        transition: $transition-primary;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    }
+
+  }
+  .container {
+
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+}
+
+.search-facets {
+
+  @include link-colors($color-secondary, $color-secondary, red, red);
+
+  @include media-breakpoint-up(md) {
+    background: rgba($color-grey-background, 0.8);
+
+    border-radius: 10px;
+    bottom: 0.6rem;
+    position: absolute;
+    right: 1.5%;
+    width: 97%;
+  }
+
+
+  a {
+    border-bottom: 1px solid $color-secondary;
+    display: block;
+  }
+
+  .facets {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 1.2rem 1.2rem 1.2rem 0;
+
+    @include media-breakpoint-up(md) {
+      display: inline-block;
+      padding: .6rem 0 .6rem 0;
+      vertical-align: middle;
+      width: 79%;
+    }
+  }
+
+  .options {
+    display: inline-block;
+
+    button[type="submit"] {
+      margin: .6rem 0 0;
+      width: 100%;
+    }
+
+    @include media-breakpoint-up(md) {
+      display: inline-block;
+      padding: 0.6rem 1.2rem 0.6rem 0;
+      vertical-align: middle;
+      width: 20%;
+    }
+  }
+
+  input:not([type="submit"]),
+  select {
+    background: $color-primary;
+    border: 1px solid $color-secondary;
+    border-radius: 4px;
+    color: $color-gray-light;
+    height: 2rem;
+    margin: 3% 1.5%;
+    padding: 0.2rem;
+    width: 100%;
+
+    &::placeholder {
+      color: $color-gray-light;
+    }
+
+    @include media-breakpoint-up(md) {
+      margin: .4rem;
+      font-size: 0.85rem;
+      line-height: 1.2rem;
+      padding: .2rem .4rem 0.3rem;
+      width: 28%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 31%;
+    }
+  }
+}

@@ -1,0 +1,128 @@
+/**
+ *  Footer
+ *
+ * Author: Creative Blazer
+ * Project: Wyble
+ * Package: wyble-scss
+ *
+ * Footer and subfooter
+**/
+
+#wrapper-footer {
+  @include make-container();
+
+  background: $color-primary;
+  color: $color-white;
+  padding: $padding-box-medium 0;
+  text-align: center;
+}
+
+.site-footer {
+  @include make-row();
+
+  & > div {
+    @include make-col-ready();
+    @include make-col(12);
+
+    margin-bottom: $padding-box-medium;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(md) {
+      @include make-col-ready();
+      @include make-col(4);
+
+      margin: $padding-box-medium 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(4);
+      margin: (2 * $padding-box-medium) 0;
+    }
+
+    @include media-breakpoint-up(xl) {
+      @include make-col(3);
+
+      &.map {
+        @include make-col(6);
+      }
+    }
+  }
+
+
+  .contact {
+
+    h3 {
+      text-transform: uppercase;
+    }
+
+    &-inner {
+      background: $color-white;
+      color: $color-grey-dark;
+      padding: $padding-box-medium;
+    }
+
+    .social-icons {
+      margin: $padding-box-small 0;
+    }
+
+    .address {
+      margin: $padding-box-small 0;
+    }
+
+    .phone {
+      background-color: map-get($icons, $color-gray-light);
+      margin: $padding-box-small 0 $padding-box-small 0;
+
+      &:before {
+        @include font-smoothing();
+
+        content: $fa-var-envelope-o;
+        font: 1em/1.75 "FontAwesome";
+      }
+      @include link-colors($color-quinary, $color-quinary, $color-primary, $color-black);
+
+    }
+  }
+  .map {
+
+    iframe {
+      height: auto;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    @include media-breakpoint-up(lg) {
+
+      iframe {
+        height: 100%;
+      }
+    }
+  }
+
+  .feed {
+  }
+}
+
+#wrapper-subfooter {
+  background: $color-secondary;
+  color: $color-white;
+  font-size: 1rem;
+  font-weight: $font-weight-bold;
+  padding: $padding-box-small;
+  text-align: center;
+
+  a {
+    font-weight: $font-weight-normal;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.2rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.45rem;
+  }
+}

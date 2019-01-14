@@ -1,0 +1,58 @@
+/**
+ *  Colors
+ *
+ * Author: Creative Blazer
+ * Project: Wyble
+ * Package: wyble-scss
+ *
+ * Color names picked by http://chir.ag/projects/name-that-color/
+ * We set colors to names so that we can easily identify the specific color
+**/
+
+$color-persian-plum: #5c1729;
+$color-my-sin: #Fdb530;
+$color-yellow-orange: #ff9947;
+$color-blue-stone: #00585e;
+$color-st-tropaz: #2c5e9c;
+$color-pumpkin-skin: #bf5b0d;
+
+$color-white: #fefefe;
+$color-black: #010101;
+
+// Grays/Greys
+$color-grey-dark: #3d4d65;
+$color-gray-dark: $color-grey-dark; // Because both spellings are 100% correct. What has this world become!?!?
+
+$color-grey-light: #90b7db;
+$color-gray-light: $color-grey-light; // Seriously, autofill is great but this saves in frustration time.
+
+$color-grey-background: #333;
+$color-gray-background: $color-grey-background;
+
+
+//
+// Color Assignments
+// Certain colors will be used in various places. If the client decides to change the main color of the site, we only
+// need to make the change here to account for all places that match
+//
+
+$color-primary: $color-persian-plum;
+$color-secondary: $color-my-sin;
+$color-tertiary: $color-yellow-orange;
+$color-quaternary: $color-grey-dark;
+$color-quinary: $color-st-tropaz;
+$color-senary: $color-blue-stone;
+$color-septenary: $color-pumpkin-skin;
+
+// Color Patterns
+$color-order: (
+        $color-primary,
+        $color-senary,
+        $color-quinary,
+        $color-septenary,
+);
+
+
+// Bootstrap Overrides
+$primary: $color-primary;
+$secondary: $color-secondary;

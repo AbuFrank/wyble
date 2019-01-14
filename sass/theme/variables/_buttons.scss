@@ -1,0 +1,62 @@
+/**
+ *  Buttons
+ *
+ * Author: Creative Blazer
+ * Project: Wyble
+ * Package: wyble-scss
+ *
+ * Buttons.
+**/
+
+// Background Color
+$color-button-primary-light: $color-yellow-orange;
+$color-button-secondary-light: $color-primary;
+
+// Font Colors
+$color-button-font-light: $color-white;
+$color-button-font-dark: $color-grey-dark;
+
+
+
+.btn {
+  &.btn-primary {
+    background-color: $color-button-primary-light;
+    border-color: $color-button-primary-light;
+
+    &:hover,
+    &:focus {
+      background-color: darken($color-button-primary-light, 15);
+    }
+  }
+
+  &.btn-secondary {
+
+    &:hover,
+    &:focus{
+      color: $color-white;
+    }
+  }
+
+  &.btn-submit {
+    background: $color-secondary;
+    color: $color-grey-dark;
+    padding: .4rem .6rem .3rem .6rem;
+
+    &:hover,
+    &:focus{
+      color: $color-white;
+    }
+
+    span {
+
+      &:before {
+        color: $color-grey-dark;
+        content: "\f002";
+        display: inline-block;
+        font: 1em/1.75 "FontAwesome";
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+}

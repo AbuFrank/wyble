@@ -26,14 +26,28 @@ function theme_enqueue_styles() {
     wp_enqueue_style( 'creative-styles', get_stylesheet_directory_uri() . '/css/creative-styles.css', array(), '1.0' );
 
     wp_enqueue_script( 'jquery');
-	wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/js/popper.min.js', array(), false);
+    wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/js/popper.min.js', array(), false);
     wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.min.js', array(), $the_theme->get( 'Version' ), true );
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
+    wp_enqueue_script( 'owl-carousel', get_stylesheet_directory_uri() . '/js/owl.carousel2.min.js');
+    wp_enqueue_script( 'owl-carousel-thumbs', get_stylesheet_directory_uri() . '/js/owl.carousel2.thumbs.min.js');
 }
 
 function add_child_theme_textdomain() {
     load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
+
+/**
+ * Convert hex and float to rgba
+ *
+ * @param $overlay_color
+ * @param $overlay_opacity
+ * @return string
+ */
+function hexToRgba($overlay_color, $overlay_opacity) {
+    list($r, $g, $b) = sscanf($overlay_color, "#%02x%02x%02x");
+    return "$r, $g, $b, $overlay_opacity";
+}

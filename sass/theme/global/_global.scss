@@ -1,0 +1,104 @@
+/**
+ *  Global
+ *
+ * Author: Creative Blazer
+ * Project: Wyble
+ * Package: wyble-scss
+ *
+ * Focus, social, etc
+**/
+
+/**
+ * Table of Contents
+ *
+ * 1. Focus
+ * 2. Social Icons
+ * 3. Headers
+ * 4. Anchors
+ * 5. Images
+ */
+
+// 1. Focus
+* {
+  &:focus {
+    box-shadow: $box-shadow-primary;
+    outline-color: $color-primary;
+  }
+}
+
+// 2. Social Icons
+// Adjust size of icons
+$icon-size: 12px;
+
+.social-icons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    margin: 0 0.25em;
+  }
+
+  span {
+    display: block;
+    width: 0; height: 0;
+    overflow: hidden;
+  }
+
+  a {
+    display: inline-block;
+    width: 2.5em;
+    height: 2.5em;
+    font-size: $icon-size;
+    border-radius: 50%;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+
+    &:before {
+      font: 1.5em/1.75 "FontAwesome";
+      @include font-smoothing();
+    }
+
+    @each $social, $icon in $icons {
+      &[href*="#{$social}"] {
+        background-color: map-get($icon, color);
+
+        &:before {
+          content: map-get($icon, char);
+        }
+      }
+    }
+  }
+}
+
+// 3. Headers
+h1 {
+  color: $color-primary;
+}
+
+h2 {
+  color: $color-secondary;
+}
+
+h3 {
+  color: $color-primary;
+  font-size: 1.75rem;
+  font-weight: $font-weight-bold;
+}
+
+// 4. Anchors
+a {
+  
+  &:hover, 
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+// 5. Images
+img {
+  max-width: 100%;
+  height: auto;
+}
